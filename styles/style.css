@@ -167,10 +167,21 @@ p {
 .slider-casos {
   overflow: hidden;
 }
-.img-slider-casos {
+.img-casos {
   max-width: 100%;
-  width: 250px;
-  height: 300px;
+  width: 200px;
+  height: 100%;
+  object-fit: cover;
+  margin: auto;
+  display: block;
+  -webkit-box-shadow: 9px 10px 5px 1px rgba(0, 0, 0, 0.38) !important;
+  -moz-box-shadow: 9px 10px 5px 1px rgba(0, 0, 0, 0.38) !important;
+  box-shadow: 9px 10px 5px 1px rgba(0, 0, 0, 0.38) !important;
+}
+.img-casos-8 {
+  max-width: 100%;
+  width: 300px;
+  height: 270px;
   object-fit: cover;
 }
 
@@ -388,6 +399,7 @@ dialog::backdrop {
 
 dialog {
   width: 80%;
+  height: 50%;
   border-radius: 15px;
   border: none;
   position: fixed;
@@ -409,6 +421,15 @@ dialog {
   color: #aaa;
   font-size: 28px;
   cursor: pointer;
+}
+.close-btn {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  color: #aaa;
+  font-size: 28px;
+  cursor: pointer;
+  margin-right: 7px;
 }
 
 .close-button:hover {
@@ -464,7 +485,13 @@ dialog {
   flex-direction: column;
   justify-items: center;
   align-items: center;
+  gap: 10px;
 }
+.sample-slider-2 {
+  max-width: 500px;
+  height: auto;
+}
+
 /*Estilos modal casos*/
 
 /*Estilos Nosotros*/
@@ -995,6 +1022,26 @@ dialog {
 
 /*Media Queries*/
 @media (min-width: 767px) {
+  dialog {
+    width: 60%;
+    height: 550px;
+    border-radius: 15px;
+    border: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .img-casos {
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: auto;
+    -webkit-box-shadow: 9px 10px 5px 1px rgba(0, 0, 0, 0.38) !important;
+    -moz-box-shadow: 9px 10px 5px 1px rgba(0, 0, 0, 0.38) !important;
+    box-shadow: 9px 10px 5px 1px rgba(0, 0, 0, 0.38) !important;
+  }
   .header {
     position: static;
     box-sizing: border-box;

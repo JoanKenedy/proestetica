@@ -86,6 +86,29 @@ const swiper1 = new Swiper(".sample-slider-1", {
   },
 });
 
+const swiperCasos = new Swiper(".sample-slider-2", {
+  loop: true,
+  spaceBetween: 30, //loop
+  autoplay: {
+    //autoplay
+    delay: 2000,
+    disableOnInteraction: false,
+  },
+  pagination: {
+    //pagination(dots)
+    el: ".swiper-pagination",
+    clickable: true,
+    renderBullet: function (index, className) {
+      return '<span class="' + className + '">' + "</span>";
+    },
+  },
+  navigation: {
+    //navigation(arrows)
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
+
 const swiper2 = new Swiper(".consultorio", {
   spaceBetween: 30,
   loop: true, //loop
@@ -101,13 +124,6 @@ const swiper2 = new Swiper(".consultorio", {
       spaceBetween: 40,
     },
   },
-});
-
-const swiperCasos = new Swiper(".slider-casos", {
-  pagination: {
-    el: ".swiper-pagination",
-  },
-  autoplay: false,
 });
 
 const bg = document.getElementById("header");
