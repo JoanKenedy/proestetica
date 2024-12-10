@@ -33,7 +33,7 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100px;
+  height: auto;
   background-color: #fff;
   position: fixed;
   top: 0;
@@ -61,12 +61,12 @@ p {
 }
 
 .header .logo-btn {
-  width: 50%;
-  max-width: 40%;
+  width: 55%;
+  max-width: 55%;
 }
 
 .header .logo-btn img {
-  width: 100%;
+  width: 100px;
 }
 
 .header .btn-menu span {
@@ -137,17 +137,14 @@ p {
 /*Fin Menu Móvil*/
 /*Fin estilos header*/
 /*Estilos Hero*/
+.hero {
+  background-color: #000;
+}
 .sample-slider {
   width: 100%;
   position: relative;
   display: none;
-}
-
-.sample-slider img {
-  width: 100%;
-  margin-top: 100px;
-  object-fit: contain;
-  height: auto;
+  background-color: #000;
 }
 
 .img-des {
@@ -240,14 +237,6 @@ p {
 }
 
 /*  */
-.hero {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 60px 1rem;
-  text-align: center;
-}
 
 .hero .hero-txt {
   display: flex;
@@ -399,7 +388,7 @@ dialog::backdrop {
 
 dialog {
   width: 80%;
-  height: 50%;
+  height: 70%;
   border-radius: 15px;
   border: none;
   position: fixed;
@@ -422,15 +411,6 @@ dialog {
   font-size: 28px;
   cursor: pointer;
 }
-.close-btn {
-  align-self: flex-end;
-  background: none;
-  border: none;
-  color: #aaa;
-  font-size: 28px;
-  cursor: pointer;
-  margin-right: 7px;
-}
 
 .close-button:hover {
   color: black;
@@ -445,9 +425,6 @@ dialog {
   width: 100%;
 }
 
-.modal-images p {
-  text-align: justify;
-}
 /*Estilos modal casos*/
 .foto-caso {
   width: 100%;
@@ -455,41 +432,44 @@ dialog {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.modal-casos {
-  width: 80%;
-  border-radius: 15px;
-  border: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-}
-.modal-casos.hide {
-  animation: hide 1s ease normal;
+  z-index: 100;
 }
 
-@keyframes hide {
-  to {
-    transform: translateY(-110%);
-  }
-}
-
-.modal-casos::backdrop {
-  backdrop-filter: blur(4px);
-  background-color: rgba(0, 0, 0, 0.5);
-}
-.modal-container {
-  display: flex;
-  flex-direction: column;
-  justify-items: center;
-  align-items: center;
-  gap: 10px;
-}
 .sample-slider-2 {
   max-width: 500px;
   height: auto;
+}
+.modal-casos {
+  background-color: rgba(0, 0, 0, 0.2);
+  position: fixed;
+  z-index: 500;
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(0);
+  transition: all 0.7s ease-in;
+}
+.modal-container {
+  background-color: #fff;
+  width: 90%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.modal-casos.showAparece {
+  transform: scale(1);
+  transition: all 0.7s ease-in;
+}
+.close-btn {
+  position: absolute;
+  right: 10px;
+  top: 5px;
 }
 
 /*Estilos modal casos*/
@@ -595,14 +575,14 @@ dialog {
 }
 
 .detalles .parte-1 {
-  background-image: url(../img/_MG_1470.png);
+  background-image: url(../img/Nosotros/slider-14.png);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
 }
 
 .detalles .parte-2 {
-  background-image: url(../img/_MG_1325.png);
+  background-image: url(../img/Nosotros/slider-15.png);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -633,14 +613,6 @@ dialog {
 .galeria-casos img {
   width: 100%;
 }
-
-.galeria-casos .item-casos {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .galeria-casos .item-casos .content-4 {
   position: absolute;
   z-index: 3;
@@ -1019,9 +991,193 @@ dialog {
 .show-tel {
   bottom: 90px !important;
 }
+.fhater {
+  background-color: #000;
+}
+.container-descripcion {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 30px;
+  padding: 0px 20px;
+}
+.item-des {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+.item-des hr {
+  width: 39%;
+  height: 1px;
+  background-color: #fff;
+}
+.item-des h2,
+.item-des p {
+  color: white;
+}
+.item-des h2 {
+  font-size: 32px;
+}
+.item-des p {
+  font-size: 16px;
+  margin-top: 5px;
+  text-align: justify;
+}
+.container-video {
+  margin-bottom: 40px;
+}
 
+.container-video .video-video {
+  height: 0px;
+  width: 100%;
+  max-width: 560px; /* Así establecemos el ancho máximo (si lo queremos) */
+  padding-top: 56.25%; /* Relación: 16/9 = 56.25% */
+  position: relative;
+}
+
+.container-video .video-video video {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+}
+.container-video p {
+  color: #fff;
+  font-size: 16px;
+  margin: 5px auto;
+}
+.btn-video {
+  background-color: #efb810;
+  padding: 9px 7px;
+  width: 170px;
+  text-align: center;
+  display: block;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #fff;
+  margin: 9px 0px 0px 0px;
+}
+.container-btn-video {
+  display: block;
+}
+.container-btn-item-des {
+  display: none;
+}
+.item-fotos img {
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.swiper-slide h3 {
+  text-align: center;
+  color: #efb810;
+}
+.antes-despues {
+  display: none;
+}
 /*Media Queries*/
 @media (min-width: 767px) {
+  .hero {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 0px 50px;
+  }
+  .hero .sample-slider img {
+    width: 90%;
+    object-fit: cover;
+  }
+  .item-des {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 10px;
+  }
+  .container-descripcion {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    padding: 40px 40px;
+    max-width: 1400px;
+    margin: auto;
+  }
+  .item-des h2 {
+    font-size: 40px;
+  }
+  .item-des p {
+    font-size: 17px;
+    margin-top: 5px;
+    text-align: justify;
+  }
+  .container-video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .container-btn-video {
+    display: none;
+  }
+  .container-btn-item-des {
+    display: block;
+  }
+  .btn-video {
+    background-color: #efb810;
+    padding: 9px 0px;
+    width: 200px;
+    text-align: center;
+    display: block;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    margin: 9px 0px 0px 0px;
+    transition: 0.7s all ease-in-out;
+  }
+  .btn-video:hover {
+    transform: scale(0.9);
+    transition: 0.7s all ease-in-out;
+  }
+  .antes-despues {
+    width: 100%;
+    margin: auto;
+    background-color: #000 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .item-antes-despues {
+    max-width: 1300px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    background-color: #000 !important;
+    padding-top: 30px;
+  }
+  .item-fotos {
+    position: relative;
+  }
+  .item-fotos img {
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .foto-despues {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+  .item-fotos:hover .foto-despues {
+    opacity: 1;
+  }
+
   dialog {
     width: 60%;
     height: 550px;
@@ -1032,6 +1188,7 @@ dialog {
     left: 50%;
     transform: translate(-50%, -50%);
   }
+
   .img-casos {
     max-width: 100%;
     width: 100%;
@@ -1113,21 +1270,16 @@ dialog {
   .sample-slider {
     width: 100%;
     display: block;
-  }
-
-  .sample-slider img {
-    width: 100%;
-    object-fit: contain;
-    height: auto;
-    margin-top: 0;
+    background-color: #000 !important;
+    margin: auto;
+    flex-grow: 1;
   }
 
   .img-des {
     display: block;
-    height: auto;
+    height: 100%;
     width: 100%;
-    max-width: 100%;
-    object-fit: cover;
+    margin: auto;
   }
 
   .swiper-slide {
@@ -1285,8 +1437,13 @@ dialog {
   }
 
   /*  */
+
   .detalles {
     flex-direction: row;
+  }
+
+  .detalles .item-detalles {
+    height: 350px;
   }
 
   .hero h3,
@@ -1417,8 +1574,11 @@ dialog {
 }
 
 @media (min-width: 1024px) {
+  #logo {
+    width: 170px;
+  }
   .header {
-    padding: 0 2rem;
+    padding: 1rem 2rem;
   }
 
   .header-blanco {
@@ -1474,10 +1634,6 @@ dialog {
 
   /*  */
 
-  .sample-slider img {
-    height: auto;
-  }
-
   .nosotros-max .img-des {
     width: 80%;
   }
@@ -1520,10 +1676,6 @@ dialog {
 
   .nosotros p {
     text-align: center;
-  }
-
-  .detalles .item-detalles {
-    height: 200px;
   }
 
   .galeria-casos {

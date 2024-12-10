@@ -5,7 +5,7 @@ const swiper = new Swiper(".sample-slider", {
     delay: 4000,
     disableOnInteraction: false,
   },
-  effect: "coverflow", // apply fade effect
+  effect: "fade", // apply fade effect
   //   fadeEffect: {
   //     crossFade: true     // resolve the overlapping of the slides
   //   }
@@ -18,7 +18,7 @@ const swiperSliderMovil = new Swiper(".sample-slider-movil", {
     delay: 4000,
     disableOnInteraction: false,
   },
-  effect: "coverflow",
+  effect: "fade",
   //   fadeEffect: {
   //     crossFade: true
   //   }
