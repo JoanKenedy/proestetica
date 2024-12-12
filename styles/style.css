@@ -1075,16 +1075,51 @@ dialog {
 .antes-despues {
   display: none;
 }
+.slider-cel {
+  margin-top: 55px;
+}
+.swiper-slide-movil img {
+  max-width: 100%;
+}
 /*Media Queries*/
 @media (min-width: 767px) {
+  .galeria-casos .item-casos {
+    position: relative;
+  }
+  .galeria-casos .item-casos .content-4 {
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    transform: scale(0);
+    transition: 0.5s;
+    background-color: #000000b6;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    color: white;
+  }
+
+  .galeria-casos .item-casos:hover .content-4 {
+    transform: scale(1);
+  }
+  .slider-cel {
+    display: none;
+  }
   .hero {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    padding: 0px 50px;
+    padding: 0px 0px;
   }
   .hero .sample-slider img {
-    width: 90%;
+    width: 100%;
     object-fit: cover;
   }
   .item-des {
@@ -1148,6 +1183,14 @@ dialog {
     align-items: center;
     flex-direction: column;
   }
+  .antes-despues h2 {
+    color: #fff;
+    margin-top: 18px;
+    font-size: 30px;
+  }
+  .antes-despues span {
+    color: #fff;
+  }
   .item-antes-despues {
     max-width: 1300px;
     margin: auto;
@@ -1173,6 +1216,7 @@ dialog {
     height: 100%;
     opacity: 0;
     transition: opacity 0.5s;
+    object-fit: cover;
   }
   .item-fotos:hover .foto-despues {
     opacity: 1;
